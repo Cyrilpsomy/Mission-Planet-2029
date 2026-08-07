@@ -9,7 +9,6 @@ import JourneyLog from "@/components/home/JourneyLog";
 import DestinationTracker from "@/components/home/DestinationTracker";
 import MissionGallery from "@/components/home/MissionGallery";
 import TravelJournal from "@/components/home/TravelJournal";
-import InteractiveMap from "@/components/home/InteractiveMap";
 import PartnersInHeaven from "@/components/home/PartnersInHeaven";
 import About from "@/components/home/About";
 
@@ -118,7 +117,7 @@ export default function Home() {
 
         <MissionGallery />
 
-        <InteractiveMap />
+    
 
         <TravelJournal />
 
