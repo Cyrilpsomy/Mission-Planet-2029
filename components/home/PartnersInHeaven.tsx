@@ -2,108 +2,114 @@
 
 import { motion } from "framer-motion";
 
+const lovedOnes = [
+  "Mary chechi",
+  "Ichachan",
+  "Velyammachi",
+  "Pooja",
+  "Sraven",
+  "Jose",
+  "Alex",
+];
+
 export default function PartnersInHeaven() {
-  const partners = [
-    "Mary Chechi",
-    "Ichachachan",
-    "Velyammachi",
-    "Sravan",
-    "Pooja",
-    "Jose",
-    "Alex",
-    "All our beloved departed souls",
-  ];
-
   return (
-    <section
-      id="partners"
-      className="relative overflow-hidden bg-slate-950 px-6 py-20 text-white md:py-28"
-    >
-
-      {/* Background Glow */}
-      <div className="absolute inset-0 bg-gradient-to-b from-slate-900/40 via-slate-950 to-slate-950" />
-
-
+    <section className="border-t border-white/10 px-6 py-24">
       <motion.div
-        className="relative z-10 mx-auto max-w-5xl text-center"
+        className="mx-auto max-w-5xl"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
+        transition={{ duration: 0.9 }}
         viewport={{ once: true }}
       >
+        {/* ================= HEADER ================= */}
 
-        <h2 className="text-3xl font-bold tracking-wide text-yellow-400 md:text-5xl">
-          Our Partners in Heaven
-        </h2>
-
-
-        <p className="mx-auto mt-6 max-w-3xl text-base italic text-slate-300 md:text-lg">
-          "Some journeys are guided by those who are no longer beside us,
-          but forever remain in our hearts."
-        </p>
-
-
-        <div className="mx-auto mt-8 max-w-3xl rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur md:mt-10 md:p-8">
-
-          <p className="text-slate-200">
-            This mission is dedicated to the memories, love, and blessings of
-            those who continue to inspire us from above.
+        <div className="text-center">
+          <p className="text-sm uppercase tracking-[0.4em] text-yellow-400">
+            Forever Remembered
           </p>
 
+          <h2 className="mt-4 text-4xl font-bold md:text-5xl">
+            Partners in Heaven
+          </h2>
+
+          <p className="mx-auto mt-5 max-w-2xl leading-8 text-slate-400">
+            Some souls may no longer be physically beside us, but their
+            memories, love, and presence continue to be part of our journey.
+          </p>
         </div>
 
+        {/* ================= NAMES ================= */}
 
-        <div className="mt-10 grid gap-5 sm:grid-cols-2 md:mt-12 md:grid-cols-3">
-
-          {partners.map((name, index) => (
-
+        <div className="mt-12 grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+          {lovedOnes.map((name, index) => (
             <motion.div
-              key={index}
-              className="rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur md:p-6"
-              whileHover={{ scale: 1.05 }}
-              initial={{ opacity: 0, y: 20 }}
+              key={name}
+              initial={{ opacity: 0, y: 25 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{
-                duration: 0.5,
-                delay: index * 0.1,
+                duration: 0.6,
+                delay: index * 0.08,
               }}
               viewport={{ once: true }}
+              whileHover={{
+                scale: 1.04,
+                y: -4,
+              }}
+              className="
+                rounded-2xl
+                border
+                border-white/10
+                bg-white/5
+                px-6
+                py-7
+                text-center
+                shadow-xl
+                backdrop-blur-md
+                transition
+                hover:border-yellow-400/30
+              "
             >
+              {/* Star */}
 
-              <div className="mb-3 text-2xl">
-                🕊️
+              <div className="text-2xl text-yellow-400">
+                ✦
               </div>
 
+              {/* Name */}
 
-              <p
-                className={`text-lg font-semibold md:text-xl ${
-                  name === "All our beloved departed souls"
-                    ? "italic text-yellow-400"
-                    : "text-white"
-                }`}
-              >
+              <h3 className="mt-3 text-xl font-semibold text-white">
                 {name}
-              </p>
-
-
-              <p className="mt-2 text-sm text-yellow-400">
-                Forever part of PLANET 2029
-              </p>
-
+              </h3>
             </motion.div>
-
           ))}
-
         </div>
 
+        {/* ================= CLOSING ================= */}
 
-        <p className="mt-10 text-xs uppercase tracking-[0.3em] text-white/50 md:mt-12 md:text-sm">
-          Remembered • Honored • Forever Connected
-        </p>
+        <motion.div
+          className="mx-auto mt-14 max-w-3xl text-center"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: true }}
+        >
+          <div className="mx-auto h-px w-20 bg-yellow-400/50" />
 
+          <p className="mt-8 text-lg italic leading-8 text-slate-300">
+            "Though you may not walk beside me,
+            you will always be a part of my journey."
+          </p>
 
+          <p className="mt-5 text-xs uppercase tracking-[0.3em] text-white/30">
+            Mary chechi • Ichachan • Velyammachi • Pooja • Sraven • Jose • Alex
+          </p>
+
+          <p className="mt-4 text-sm text-slate-500">
+            And all beloved souls who remain forever in our hearts.
+          </p>
+        </motion.div>
       </motion.div>
-
     </section>
   );
 }

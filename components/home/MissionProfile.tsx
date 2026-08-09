@@ -13,25 +13,37 @@ export default function MissionProfile() {
       value: "07 August 2026",
     },
     {
-      title: "Objective",
+      title: "Mission Vision",
       value:
-        "Explore the world, experience new cultures, and complete an international journey before December 2029.",
+        "To explore beyond familiar borders, discover new places, experience different cultures, and create memories that become part of a lifelong journey.",
+    },
+    {
+      title: "Mission Objective",
+      value:
+        "Complete at least one international journey on or before December 2029 while continuing to explore and document meaningful experiences along the way.",
     },
     {
       title: "Mission Status",
       value: "ACTIVE",
     },
     {
-      title: "Target",
-      value: "December 2029",
+      title: "Mission Duration",
+      value: "August 2026 — December 2029",
+    },
+    {
+      title: "Primary Target",
+      value:
+        "At least one international trip before the end of December 2029.",
+    },
+    {
+      title: "Mission Philosophy",
+      value:
+        "Travel is not only about destinations. It is about people, cultures, experiences, challenges, growth, and the stories collected along the way.",
     },
   ];
 
   return (
-    <section
-      id="mission"
-      className="bg-slate-950 px-6 py-20 text-white md:py-28"
-    >
+    <section className="px-6 py-20">
       <motion.div
         className="
           mx-auto
@@ -49,18 +61,22 @@ export default function MissionProfile() {
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
       >
-
         <h2 className="text-center text-3xl font-bold md:text-4xl">
           Mission Profile
         </h2>
 
+        <p className="mx-auto mt-4 max-w-3xl text-center leading-7 text-slate-300">
+          PLANET 2029 is a personal journey that began on 07 August 2026,
+          with a simple goal — to explore beyond familiar borders and complete
+          at least one international journey before December 2029.
+        </p>
 
         <div className="mt-8 grid gap-5 md:grid-cols-2 md:gap-6">
-
           {details.map((item, index) => (
             <motion.div
               key={index}
               whileHover={{ scale: 1.03 }}
+              transition={{ duration: 0.2 }}
               className="
                 rounded-xl
                 border
@@ -70,21 +86,16 @@ export default function MissionProfile() {
                 md:p-6
               "
             >
-
               <h3 className="font-semibold text-yellow-400">
                 {item.title}
               </h3>
 
-
               <p className="mt-2 leading-7 text-slate-200">
                 {item.value}
               </p>
-
             </motion.div>
           ))}
-
         </div>
-
       </motion.div>
     </section>
   );
