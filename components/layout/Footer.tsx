@@ -37,7 +37,7 @@ export default function Footer() {
           </a>
 
           <a
-            href="/#about"
+            href="/about"
             className="transition hover:text-yellow-400"
           >
             About Me
@@ -51,17 +51,17 @@ export default function Footer() {
           </a>
 
           <a
-            href="/planet-2029#gallery"
-            className="transition hover:text-yellow-400"
-          >
-            Gallery
-          </a>
-
-          <a
             href="/planet-2029#journal"
             className="transition hover:text-yellow-400"
           >
             Journal
+          </a>
+
+          <a
+            href="/cineliebe"
+            className="transition hover:text-yellow-400"
+          >
+            Cineliebe
           </a>
         </div>
 

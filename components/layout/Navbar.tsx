@@ -26,7 +26,7 @@ export default function Navbar() {
     },
     {
       name: "About",
-      href: "/#about",
+      href: "/about",
     },
     {
       name: "Cineliebe",
@@ -52,7 +52,7 @@ export default function Navbar() {
       >
         <div className="flex h-24 w-full items-center justify-between px-8 lg:px-12">
 
-          {/* ================= LOGO ================= */}
+          {/* LOGO */}
 
           <motion.a
             href="/"
@@ -64,11 +64,11 @@ export default function Navbar() {
             </span>
           </motion.a>
 
-          {/* ================= RIGHT SIDE ================= */}
+          {/* RIGHT SIDE */}
 
           <div className="flex items-center gap-8">
 
-            {/* Navigation Links */}
+            {/* NAVIGATION LINKS */}
 
             <div className="flex items-center gap-8">
               {links.map((link) => (
@@ -85,7 +85,7 @@ export default function Navbar() {
               ))}
             </div>
 
-            {/* ================= PLANET 2029 ================= */}
+            {/* PLANET 2029 */}
 
             <motion.a
               href="/planet-2029"
@@ -105,10 +105,11 @@ export default function Navbar() {
                 →
               </span>
             </motion.a>
+
           </div>
         </div>
 
-        {/* ================= BOTTOM ACCENT ================= */}
+        {/* BOTTOM ACCENT */}
 
         <div
           className={`h-px bg-gradient-to-r from-transparent via-[#A3FF12]/40 to-transparent transition-opacity duration-500 ${
@@ -141,7 +142,7 @@ export default function Navbar() {
       >
         <div className="flex h-20 items-center justify-between px-6">
 
-          {/* Mobile Logo */}
+          {/* MOBILE LOGO */}
 
           <motion.a
             href="/"
@@ -151,7 +152,7 @@ export default function Navbar() {
             Cyrilpsomy
           </motion.a>
 
-          {/* Mobile Menu Button */}
+          {/* MOBILE MENU BUTTON */}
 
           <button
             type="button"
@@ -187,9 +188,10 @@ export default function Navbar() {
 
             </div>
           </button>
+
         </div>
 
-        {/* ================= MOBILE MENU ================= */}
+        {/* MOBILE MENU */}
 
         <AnimatePresence>
           {menuOpen && (
@@ -213,7 +215,7 @@ export default function Navbar() {
             >
               <div className="px-6 pb-8 pt-5">
 
-                {/* Mobile Links */}
+                {/* MOBILE LINKS */}
 
                 <div className="space-y-1">
                   {links.map((link, index) => (
@@ -243,7 +245,7 @@ export default function Navbar() {
                   ))}
                 </div>
 
-                {/* Mobile PLANET 2029 */}
+                {/* MOBILE PLANET 2029 */}
 
                 <motion.a
                   href="/planet-2029"
@@ -269,12 +271,13 @@ export default function Navbar() {
                     →
                   </span>
                 </motion.a>
+
               </div>
             </motion.div>
           )}
         </AnimatePresence>
 
-        {/* Mobile Accent */}
+        {/* MOBILE ACCENT */}
 
         <div className="h-px bg-gradient-to-r from-transparent via-[#A3FF12]/40 to-transparent" />
       </motion.nav>

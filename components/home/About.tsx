@@ -1,169 +1,178 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
+
+const photos = Array.from({ length: 16 }, (_, index) => ({
+  src: `/about/cyril-${String(index + 1).padStart(2, "0")}.jpg`,
+  alt: `Cyril — personal moment ${index + 1}`,
+}));
 
 export default function About() {
   return (
-    <motion.div
-      className="mx-auto max-w-5xl"
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 1 }}
-      viewport={{ once: true }}
-    >
-      {/* ================= SECTION HEADING ================= */}
-
-      <div className="text-center">
-        <p className="text-sm uppercase tracking-[0.45em] text-[#A3FF12]">
-          Get to know me
-        </p>
-
-        <h2 className="mt-4 text-4xl font-bold text-white md:text-5xl">
-          About Me
-        </h2>
-
-        <div className="mx-auto mt-6 h-px w-20 bg-[#A3FF12]" />
-      </div>
-
-      {/* ================= INTRODUCTION ================= */}
-
+    <div className="mx-auto max-w-7xl">
+      {/* Heading */}
       <motion.div
-        className="mx-auto mt-12 max-w-4xl space-y-6 text-base leading-8 text-gray-300 md:text-lg md:leading-9"
-        initial={{ opacity: 0, y: 25 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
-      >
-        <p>
-          Welcome to{" "}
-          <strong className="text-white">
-            CYRILPSOMY
-          </strong>{" "}
-          — a personal space where I can document the experiences,
-          dreams, journeys and memories that shape my life.
-        </p>
-
-        <p>
-          I believe that life is more than simply moving from one day
-          to another. It is about discovering new places, meeting
-          people, experiencing different cultures, learning from every
-          journey and creating memories that stay with us.
-        </p>
-
-        <p>
-          This website is a place to collect those moments. Some will
-          be carefully planned, while others may come unexpectedly.
-          Together, they will become part of a larger story.
-        </p>
-      </motion.div>
-
-      {/* ================= PHILOSOPHY ================= */}
-
-      <motion.div
-        className="mt-16 rounded-3xl border border-[#A3FF12]/30 bg-[#A3FF12]/[0.04] p-7 text-center backdrop-blur-md transition-all duration-500 hover:border-[#A3FF12]/70 hover:bg-[#A3FF12]/[0.08] hover:shadow-[0_0_45px_rgba(163,255,18,0.1)] md:p-10"
-        initial={{ opacity: 0, scale: 0.96 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        whileHover={{ y: -6 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
-      >
-        <p className="text-sm uppercase tracking-[0.3em] text-[#A3FF12]">
-          My Philosophy
-        </p>
-
-        <div className="mx-auto mt-5 h-px w-12 bg-[#A3FF12]/60" />
-
-        <p className="mt-6 text-xl leading-9 text-white md:text-2xl">
-          "Life is a journey. Explore it, experience it, and leave
-          behind stories worth remembering."
-        </p>
-      </motion.div>
-
-      {/* ================= PLANET 2029 ================= */}
-
-      <motion.div
-        className="group relative mt-12 overflow-hidden rounded-3xl border border-[#A3FF12]/30 bg-gradient-to-br from-lime-950/40 via-black to-black p-7 transition-all duration-500 hover:-translate-y-2 hover:border-[#A3FF12]/70 hover:shadow-[0_0_60px_rgba(163,255,18,0.12)] md:p-10"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
       >
-        {/* Background Glow */}
-        <div className="absolute -right-24 -top-24 h-64 w-64 rounded-full bg-[#A3FF12]/10 blur-3xl transition-all duration-700 group-hover:bg-[#A3FF12]/25" />
+        <p className="text-xs uppercase tracking-[0.5em] text-[#A3FF12]">
+          About Me
+        </p>
 
-        <div className="relative z-10 text-center">
-          <p className="text-sm uppercase tracking-[0.35em] text-[#A3FF12]">
-            A journey within the journey
-          </p>
+        <div className="mt-6 flex flex-col justify-between gap-8 md:flex-row md:items-end">
+          <div>
+            <h2 className="text-5xl font-bold tracking-tight sm:text-6xl md:text-8xl">
+              This is me.
+            </h2>
 
-          <h3 className="mt-4 text-3xl font-bold text-white md:text-4xl">
-            PLANET 2029
-          </h3>
-
-          <div className="mx-auto mt-5 h-px w-16 bg-[#A3FF12]" />
-
-          <div className="mx-auto mt-7 max-w-3xl space-y-5 text-base leading-8 text-gray-300 md:text-lg">
-            <p>
-              On{" "}
-              <strong className="text-white">
-                7 August 2026
-              </strong>
-              , I started a personal mission called{" "}
-              <strong className="text-white">
-                PLANET 2029
-              </strong>
-              .
-            </p>
-
-            <p>
-              The mission is simple: explore beyond familiar borders,
-              experience the world and complete at least one
-              international journey before{" "}
-              <strong className="text-white">
-                31 December 2029
-              </strong>
-              .
-            </p>
-
-            <p>
-              PLANET 2029 is not only about reaching destinations. It
-              is about the people I meet, the cultures I experience,
-              the challenges I face and the memories I create along
-              the way.
-            </p>
+            <div className="mt-7 h-px w-20 bg-[#A3FF12]" />
           </div>
 
-          {/* Interactive Button */}
-
-          <motion.a
-            href="/planet-2029"
-            whileHover={{
-              scale: 1.06,
-              boxShadow: "0 0 35px rgba(163,255,18,0.4)",
-            }}
-            whileTap={{ scale: 0.96 }}
-            className="mt-9 inline-block rounded-full bg-[#A3FF12] px-8 py-3 font-semibold text-black transition-all duration-300 hover:bg-[#B5FF45]"
-          >
-            Explore PLANET 2029 →
-          </motion.a>
+          <p className="max-w-md text-sm leading-7 text-white/40 md:text-right">
+            Not just a collection of photographs, but moments that became
+            memories and experiences that became part of my story.
+          </p>
         </div>
       </motion.div>
 
-      {/* ================= CLOSING ================= */}
-
+      {/* Introduction */}
       <motion.div
-        className="mt-16 text-center"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 1 }}
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.1 }}
         viewport={{ once: true }}
+        className="mt-16 grid gap-10 md:grid-cols-[1fr_1.2fr] md:items-end"
       >
-        <div className="mx-auto mb-6 h-px w-16 bg-[#A3FF12]/40" />
+        <div>
+          <p className="text-2xl font-medium leading-relaxed text-white md:text-3xl">
+            I am Cyril.
+          </p>
 
-        <p className="text-xs uppercase tracking-[0.3em] text-white/40 md:text-sm">
-          Explore • Dream • Discover • Remember
+          <p className="mt-5 max-w-xl text-sm leading-8 text-white/40 md:text-base">
+            A person figuring things out one chapter at a time. I believe
+            life is made up of experiences, people, places and moments that
+            slowly shape who we become.
+          </p>
+        </div>
+
+        <div className="md:text-right">
+          <p className="text-xs uppercase tracking-[0.35em] text-white/25">
+            My Philosophy
+          </p>
+
+          <p className="mt-4 text-xl italic text-[#A3FF12] md:text-2xl">
+            “Everything in life happens for a reason.”
+          </p>
+        </div>
+      </motion.div>
+
+      {/* Photo Gallery */}
+      <div className="mt-20">
+        <div className="mb-8 flex items-center justify-between border-b border-white/10 pb-5">
+          <p className="text-xs uppercase tracking-[0.35em] text-white/30">
+            Moments
+          </p>
+
+          <p className="text-xs tracking-[0.25em] text-[#A3FF12]">
+            16 PHOTOGRAPHS
+          </p>
+        </div>
+
+        <div className="grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-5">
+          {photos.map((photo, index) => {
+            /*
+             * Give selected photos larger visual weight.
+             * 01, 06, 11 and 16 become featured images.
+             */
+            const featured =
+              index === 0 ||
+              index === 5 ||
+              index === 10 ||
+              index === 15;
+
+            return (
+              <motion.div
+                key={photo.src}
+                initial={{
+                  opacity: 0,
+                  y: 30,
+                }}
+                whileInView={{
+                  opacity: 1,
+                  y: 0,
+                }}
+                transition={{
+                  duration: 0.6,
+                  delay: (index % 4) * 0.08,
+                }}
+                viewport={{
+                  once: true,
+                  margin: "-50px",
+                }}
+                className={`group relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.02] ${
+                  featured
+                    ? "col-span-2 row-span-2 min-h-[420px] md:min-h-[520px]"
+                    : "min-h-[210px] md:min-h-[260px]"
+                }`}
+              >
+                {/* Green glow */}
+                <div className="pointer-events-none absolute inset-0 z-10 bg-[#A3FF12]/0 transition-all duration-700 group-hover:bg-[#A3FF12]/[0.035]" />
+
+                <Image
+                  src={photo.src}
+                  alt={photo.alt}
+                  fill
+                  sizes={
+                    featured
+                      ? "(max-width: 768px) 100vw, 50vw"
+                      : "(max-width: 768px) 50vw, 25vw"
+                  }
+                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+                />
+
+                {/* Bottom gradient */}
+                <div className="absolute inset-x-0 bottom-0 z-10 h-1/3 bg-gradient-to-t from-black/50 to-transparent opacity-60" />
+
+                {/* Number */}
+                <div className="absolute bottom-4 left-4 z-20">
+                  <span className="text-[10px] tracking-[0.3em] text-white/50">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                </div>
+
+                {/* Hover border */}
+                <div className="absolute inset-0 z-20 rounded-2xl border border-transparent transition-all duration-500 group-hover:border-[#A3FF12]/40" />
+              </motion.div>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* Closing statement */}
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+        className="mx-auto mt-24 max-w-3xl text-center"
+      >
+        <div className="mx-auto h-px w-16 bg-[#A3FF12]" />
+
+        <p className="mt-8 text-2xl font-medium leading-relaxed md:text-4xl">
+          “Life is not about having everything figured out.
+          <span className="text-white/30">
+            {" "}
+            It is about experiencing it while you are here.”
+          </span>
+        </p>
+
+        <p className="mt-7 text-xs uppercase tracking-[0.4em] text-white/25">
+          Cyrilpsomy
         </p>
       </motion.div>
-    </motion.div>
+    </div>
   );
 }

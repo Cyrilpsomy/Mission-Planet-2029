@@ -24,7 +24,7 @@ const entries = [
     year: "2026–27",
     title: "Preparation & Planning",
     description:
-      "Researching destinations, preparing for international travel, building resources, learning, planning and turning future possibilities into achievable goals.",
+      "Researching destinations, preparing for international travel, building resources, learning, planning and turning future possibilities into achievable goals. I have also started learning German as part of my preparation to pursue my goal of migrating to Germany.",
     status: "IN PROGRESS",
   },
   {
@@ -63,7 +63,10 @@ export default function JourneyLog() {
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
       >
-        {/* Heading */}
+        {/* =====================================================
+            HEADING
+        ===================================================== */}
+
         <div className="text-center">
           <p className="text-sm uppercase tracking-[0.4em] text-yellow-400">
             The Road So Far
@@ -81,7 +84,10 @@ export default function JourneyLog() {
           </p>
         </div>
 
-        {/* Timeline */}
+        {/* =====================================================
+            TIMELINE
+        ===================================================== */}
+
         <div className="relative mt-14">
 
           {/* Timeline Line */}
@@ -109,13 +115,20 @@ export default function JourneyLog() {
                   viewport={{ once: true }}
                   className="relative md:grid md:grid-cols-2 md:gap-12"
                 >
-                  {/* Timeline Dot */}
+                  {/* =================================================
+                      TIMELINE DOT
+                  ================================================= */}
+
+                  {/* Desktop Dot */}
                   <div className="absolute left-1/2 top-8 z-10 hidden h-4 w-4 -translate-x-1/2 rounded-full border-4 border-slate-950 bg-yellow-400 md:block" />
 
                   {/* Mobile Dot */}
                   <div className="absolute left-0 top-8 h-3 w-3 rounded-full bg-yellow-400 md:hidden" />
 
-                  {/* Card */}
+                  {/* =================================================
+                      CARD
+                  ================================================= */}
+
                   <div
                     className={`
                       ml-7
@@ -177,7 +190,10 @@ export default function JourneyLog() {
           </div>
         </div>
 
-        {/* Closing Message */}
+        {/* =====================================================
+            CLOSING MESSAGE
+        ===================================================== */}
+
         <motion.div
           className="mt-16 text-center"
           initial={{ opacity: 0 }}
