@@ -4,198 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
-
-const movies = [
-  {
-    title: "Your Name",
-    year: "2016",
-    genre: "Anime · Romance",
-    description:
-      "A beautiful story of connection, destiny, and memories that transcend time.",
-    poster: "/cineliebe/posters/your-name.jpg",
-  },
-  {
-    title: "Interstellar",
-    year: "2014",
-    genre: "Sci-Fi · Drama",
-    description:
-      "A journey beyond space and time, driven by love, survival, and human curiosity.",
-    poster: "/cineliebe/posters/interstellar.jpg",
-  },
-  {
-    title: "Weathering with You",
-    year: "2019",
-    genre: "Anime · Fantasy",
-    description:
-      "A story of love, weather, sacrifice, and two people brought together by fate.",
-    poster: "/cineliebe/posters/weathering-with-you.jpg",
-  },
-  {
-    title: "Spirited Away",
-    year: "2001",
-    genre: "Anime · Fantasy",
-    description:
-      "A mysterious journey through a magical world filled with unforgettable characters.",
-    poster: "/cineliebe/posters/spirited-away.jpg",
-  },
-  {
-    title: "My Neighbor Totoro",
-    year: "1988",
-    genre: "Anime · Family",
-    description:
-      "A warm and magical story about childhood, family, friendship, and imagination.",
-    poster: "/cineliebe/posters/my-neighbor-totoro.jpg",
-  },
-  {
-    title: "Be with You",
-    year: "2018",
-    genre: "Romance · Drama",
-    description:
-      "A heartfelt story about love, promises, memories, and finding each other again.",
-    poster: "/cineliebe/posters/be-with-you.jpg",
-  },
-  {
-    title: "Miracle in Cell No. 7",
-    year: "2013",
-    genre: "Drama · Family",
-    description:
-      "An emotional story of innocence, fatherly love, friendship, and family.",
-    poster: "/cineliebe/posters/miracle-in-cell-no-7.jpg",
-  },
-  {
-    title: "The Nun",
-    year: "2018",
-    genre: "Horror · Mystery",
-    description:
-      "A dark and terrifying chapter from the world of The Conjuring.",
-    poster: "/cineliebe/posters/the-nun.jpg",
-  },
-  {
-    title: "Kettayolaanu Ente Malakha",
-    year: "2019",
-    genre: "Malayalam · Drama",
-    description:
-      "A deeply human story exploring marriage, relationships, communication, and understanding.",
-    poster: "/cineliebe/posters/kettiolaanu-ente-malakha.jpg",
-  },
-  {
-    title: "Bethalahem Kudumba Unit",
-    year: "2026",
-    genre: "Malayalam · Drama",
-    description:
-      "A new addition to my personal collection of cinematic memories.",
-    poster: "/cineliebe/posters/bethalahem-kudumba-unit.jpg",
-  },
-  {
-    title: "Premam",
-    year: "2015",
-    genre: "Malayalam · Romance",
-    description:
-      "A nostalgic journey through different stages of love, life, friendship, and growing up.",
-    poster: "/cineliebe/posters/premam.jpg",
-  },
-  {
-    title: "The Terminal",
-    year: "2004",
-    genre: "Comedy · Drama",
-    description:
-      "A touching story about an ordinary man unexpectedly trapped inside an airport.",
-    poster: "/cineliebe/posters/the-terminal.jpg",
-  },
-  {
-    title: "The Raid",
-    year: "2011",
-    genre: "Action · Thriller",
-    description:
-      "A relentless fight for survival as an elite team takes on a dangerous criminal stronghold.",
-    poster: "/cineliebe/posters/the-raid.jpg",
-  },
-  {
-    title: "Extraction",
-    year: "2020",
-    genre: "Action · Thriller",
-    description:
-      "A black-market mercenary takes on a dangerous mission that pushes him to his limits.",
-    poster: "/cineliebe/posters/extraction.jpg",
-  },
-  {
-    title: "Grave of the Fireflies",
-    year: "1988",
-    genre: "Anime · War · Drama",
-    description:
-      "A heartbreaking story of two siblings struggling to survive during wartime.",
-    poster: "/cineliebe/posters/grave-of-the-fireflies.jpg",
-  },
-  {
-    title: "Hotarubi no Mori e",
-    year: "2011",
-    genre: "Anime · Romance · Fantasy",
-    description:
-      "A bittersweet story of an unusual friendship, love, and a connection that cannot last forever.",
-    poster: "/cineliebe/posters/hotarubi-no-mori-e.jpg",
-  },
-  {
-    title: "Kazhcha",
-    year: "2004",
-    genre: "Malayalam · Drama",
-    description:
-      "A touching Malayalam drama about compassion, family, and the unexpected bonds between people.",
-    poster: "/cineliebe/posters/kazhcha.jpg",
-  },
-
-  // NEWLY ADDED MOVIES
-
-  {
-    title: "How to Make Millions Before Grandma Dies",
-    year: "2024",
-    genre: "Drama · Family",
-    description:
-      "A touching story about family, love, responsibility, and the value of time.",
-    poster:
-      "/cineliebe/posters/how-to-make-millions-before-grandma-dies.jpg",
-  },
-  {
-    title: "Takeoff",
-    year: "2017",
-    genre: "Malayalam · Drama · Thriller",
-    description:
-      "A tense and emotional story inspired by the evacuation of Indian nurses from Iraq.",
-    poster: "/cineliebe/posters/takeoff.jpg",
-  },
-  {
-    title: "The Pursuit of Happyness",
-    year: "2006",
-    genre: "Biography · Drama",
-    description:
-      "A determined father fights through hardship while chasing a better future for his son.",
-    poster: "/cineliebe/posters/the-pursuit-of-happyness.jpg",
-  },
-  {
-    title: "2 Fast 2 Furious",
-    year: "2003",
-    genre: "Action · Crime",
-    description:
-      "Street racing, loyalty, and high-speed action in Miami.",
-    poster: "/cineliebe/posters/2-fast-2-furious.jpg",
-  },
-  {
-    title: "Aniyathipravu",
-    year: "1997",
-    genre: "Malayalam · Romance",
-    description:
-      "A nostalgic love story about young romance, family, and the challenges of being together.",
-    poster: "/cineliebe/posters/aniyathipravu.jpg",
-  },
-  {
-    title: "The Fast and the Furious: Tokyo Drift",
-    year: "2006",
-    genre: "Action · Crime · Racing",
-    description:
-      "An outsider enters Tokyo’s underground drifting scene and finds a new world of speed, rivalry, and belonging.",
-    poster:
-      "/cineliebe/posters/the-fast-and-the-furious-tokyo-drift.jpg",
-  },
-];
+import { movies } from "@/data/cineliebe";
 
 export default function MoviesPage() {
   return (
@@ -203,9 +12,9 @@ export default function MoviesPage() {
       <Navbar />
 
       {/* HERO */}
-      <section className="relative overflow-hidden px-6 pb-20 pt-32 md:pb-28 md:pt-40">
-        {/* Green glow */}
-        <div className="pointer-events-none absolute left-1/2 top-0 h-[500px] w-[700px] -translate-x-1/2 rounded-full bg-green-500/10 blur-[140px]" />
+      <section className="relative overflow-hidden px-6 pb-20 pt-32">
+        {/* Gold glow */}
+        <div className="absolute left-1/2 top-20 h-72 w-72 -translate-x-1/2 rounded-full bg-[#F5C542]/10 blur-[120px]" />
 
         <div className="relative mx-auto max-w-7xl">
           <motion.div
@@ -213,20 +22,24 @@ export default function MoviesPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <p className="mb-5 text-sm font-medium uppercase tracking-[0.35em] text-green-400">
+            <p className="text-xs uppercase tracking-[0.5em] text-[#F5C542]">
               Cineliebe
             </p>
 
-            <h1 className="text-5xl font-semibold tracking-tight md:text-7xl">
-              Movies
-            </h1>
+            <div className="mt-6 flex flex-col justify-between gap-8 md:flex-row md:items-end">
+              <div>
+                <h1 className="text-6xl font-bold tracking-tight md:text-8xl">
+                  Movies
+                </h1>
 
-            <div className="mt-6 h-px w-20 bg-green-400" />
+                <div className="mt-7 h-px w-24 bg-[#F5C542]" />
+              </div>
 
-            <p className="mt-7 max-w-2xl text-base leading-8 text-white/60 md:text-lg">
-              A personal collection of movies that left a mark, created
-              memories, and became part of my cinematic journey.
-            </p>
+              <p className="max-w-md text-sm leading-7 text-white/40 md:text-right">
+                Films that stayed with me long after the credits
+                rolled, becoming part of my cinematic memories.
+              </p>
+            </div>
           </motion.div>
         </div>
       </section>
@@ -234,84 +47,82 @@ export default function MoviesPage() {
       {/* MOVIE COLLECTION */}
       <section className="px-6 pb-32">
         <div className="mx-auto max-w-7xl">
+
           {/* COLLECTION HEADER */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="mb-10 flex items-end justify-between border-b border-white/10 pb-5"
-          >
-            <div>
-              <p className="text-xs uppercase tracking-[0.3em] text-white/40">
-                My Collection
-              </p>
-
-              <h2 className="mt-2 text-2xl font-medium md:text-3xl">
-                Films
-              </h2>
-            </div>
-
-            <p className="text-sm text-white/40">
-              {movies.length} Movies
+          <div className="mb-10 flex items-center justify-between border-b border-white/10 pb-5">
+            <p className="text-xs uppercase tracking-[0.35em] text-white/40">
+              My Collection
             </p>
-          </motion.div>
+
+            <p className="text-xs tracking-widest text-[#F5C542]">
+              {String(movies.length).padStart(2, "0")} MOVIES
+            </p>
+          </div>
 
           {/* MOVIE LIST */}
-          <div className="space-y-5">
+          <div className="space-y-4">
             {movies.map((movie, index) => (
               <motion.div
                 key={movie.title}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
                 transition={{
-                  duration: 0.6,
-                  delay: index * 0.03,
+                  duration: 0.5,
+                  delay: index * 0.04,
                 }}
-                className="group overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] transition-all duration-500 hover:border-green-400/30 hover:bg-white/[0.05]"
+                viewport={{
+                  once: true,
+                  margin: "-50px",
+                }}
+                whileHover={{ x: 8 }}
+                className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.025] transition-all duration-500 hover:border-[#F5C542]/40 hover:bg-[#F5C542]/[0.04]"
               >
-                <div className="grid md:grid-cols-[150px_80px_1fr_auto]">
+                {/* Hover accent line */}
+                <div className="absolute left-0 top-0 h-full w-0 bg-[#F5C542] transition-all duration-500 group-hover:w-1" />
+
+                <div className="grid items-center gap-6 p-5 md:grid-cols-[100px_80px_1fr_auto] md:p-8">
+
                   {/* POSTER */}
-                  <div className="relative h-[225px] w-full overflow-hidden bg-white/5">
+                  <div className="relative h-[150px] w-[100px] overflow-hidden rounded-lg bg-white/5 shadow-2xl">
                     <Image
                       src={movie.poster}
                       alt={`${movie.title} poster`}
                       fill
+                      sizes="100px"
+                      priority={index < 3}
                       className="object-cover transition-transform duration-700 group-hover:scale-105"
-                      sizes="150px"
                     />
 
-                    {/* POSTER OVERLAY */}
-                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+                    {/* Poster overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-70" />
                   </div>
 
                   {/* NUMBER */}
-                  <div className="flex items-center px-6 py-6 md:px-4 md:py-8">
-                    <span className="text-sm font-medium text-green-400/70">
+                  <div>
+                    <p className="text-sm font-medium tracking-[0.25em] text-[#F5C542]">
                       {String(index + 1).padStart(2, "0")}
-                    </span>
+                    </p>
                   </div>
 
                   {/* MOVIE INFORMATION */}
-                  <div className="flex flex-col justify-center px-6 py-6 md:px-4 md:py-8">
-                    <h3 className="text-xl font-medium tracking-tight transition-colors duration-300 group-hover:text-green-400 md:text-2xl">
+                  <div>
+                    <h2 className="text-2xl font-semibold tracking-tight transition-colors duration-300 group-hover:text-[#F5C542] md:text-3xl">
                       {movie.title}
-                    </h3>
+                    </h2>
 
-                    <p className="mt-2 text-sm text-white/40">
-                      {movie.genre}
-                    </p>
-
-                    <p className="mt-4 max-w-2xl text-sm leading-7 text-white/55">
+                    <p className="mt-2 max-w-2xl text-sm leading-6 text-white/35">
                       {movie.description}
                     </p>
                   </div>
 
-                  {/* YEAR */}
-                  <div className="flex items-center px-6 pb-6 md:px-8 md:py-8 md:pb-8">
-                    <span className="text-sm text-white/35">
+                  {/* YEAR / GENRE */}
+                  <div className="flex flex-col gap-2 md:items-end">
+                    <span className="text-sm text-white/70">
                       {movie.year}
+                    </span>
+
+                    <span className="text-xs uppercase tracking-[0.2em] text-white/30">
+                      {movie.genre}
                     </span>
                   </div>
                 </div>
