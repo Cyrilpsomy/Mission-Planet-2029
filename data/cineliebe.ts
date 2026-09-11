@@ -133,7 +133,7 @@ export const movies = [
     genre: "Malayalam · Drama",
     description:
       "A touching Malayalam drama about compassion, family, and the unexpected bonds between people.",
-    poster: "/cineliebe/posters/kazcha.jpg",
+    poster: "/cineliebe/posters/kazhcha.jpg",
   },
   {
     title: "How to Make Millions Before Grandma Dies",
