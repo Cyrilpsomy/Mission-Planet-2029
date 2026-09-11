@@ -1,11 +1,4 @@
-"use client";
-
-import { motion } from "framer-motion";
-import Image from "next/image";
-import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
-
-const movies = [
+export const movies = [
   {
     title: "Your Name",
     year: "2016",
@@ -23,7 +16,7 @@ const movies = [
     poster: "/cineliebe/posters/interstellar.jpg",
   },
   {
-    title: "Weathering with You",
+    title: "Weathering With You",
     year: "2019",
     genre: "Anime · Fantasy",
     description:
@@ -47,7 +40,7 @@ const movies = [
     poster: "/cineliebe/posters/my-neighbor-totoro.jpg",
   },
   {
-    title: "Be with You",
+    title: "Be With You",
     year: "2018",
     genre: "Romance · Drama",
     description:
@@ -71,7 +64,7 @@ const movies = [
     poster: "/cineliebe/posters/the-nun.jpg",
   },
   {
-    title: "Kettayolaanu Ente Malakha",
+    title: "Kettiolaanu Ente Malakha",
     year: "2019",
     genre: "Malayalam · Drama",
     description:
@@ -140,11 +133,8 @@ const movies = [
     genre: "Malayalam · Drama",
     description:
       "A touching Malayalam drama about compassion, family, and the unexpected bonds between people.",
-    poster: "/cineliebe/posters/kazhcha.jpg",
+    poster: "/cineliebe/posters/kazcha.jpg",
   },
-
-  // NEWLY ADDED MOVIES
-
   {
     title: "How to Make Millions Before Grandma Dies",
     year: "2024",
@@ -197,131 +187,85 @@ const movies = [
   },
 ];
 
-export default function MoviesPage() {
-  return (
-    <main className="min-h-screen bg-black text-white">
-      <Navbar />
-
-      {/* HERO */}
-      <section className="relative overflow-hidden px-6 pb-20 pt-32 md:pb-28 md:pt-40">
-        {/* Green glow */}
-        <div className="pointer-events-none absolute left-1/2 top-0 h-[500px] w-[700px] -translate-x-1/2 rounded-full bg-green-500/10 blur-[140px]" />
-
-        <div className="relative mx-auto max-w-7xl">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <p className="mb-5 text-sm font-medium uppercase tracking-[0.35em] text-green-400">
-              Cineliebe
-            </p>
-
-            <h1 className="text-5xl font-semibold tracking-tight md:text-7xl">
-              Movies
-            </h1>
-
-            <div className="mt-6 h-px w-20 bg-green-400" />
-
-            <p className="mt-7 max-w-2xl text-base leading-8 text-white/60 md:text-lg">
-              A personal collection of movies that left a mark, created
-              memories, and became part of my cinematic journey.
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* MOVIE COLLECTION */}
-      <section className="px-6 pb-32">
-        <div className="mx-auto max-w-7xl">
-          {/* COLLECTION HEADER */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="mb-10 flex items-end justify-between border-b border-white/10 pb-5"
-          >
-            <div>
-              <p className="text-xs uppercase tracking-[0.3em] text-white/40">
-                My Collection
-              </p>
-
-              <h2 className="mt-2 text-2xl font-medium md:text-3xl">
-                Films
-              </h2>
-            </div>
-
-            <p className="text-sm text-white/40">
-              {movies.length} Movies
-            </p>
-          </motion.div>
-
-          {/* MOVIE LIST */}
-          <div className="space-y-5">
-            {movies.map((movie, index) => (
-              <motion.div
-                key={movie.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{
-                  duration: 0.6,
-                  delay: index * 0.03,
-                }}
-                className="group overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] transition-all duration-500 hover:border-green-400/30 hover:bg-white/[0.05]"
-              >
-                <div className="grid md:grid-cols-[150px_80px_1fr_auto]">
-                  {/* POSTER */}
-                  <div className="relative h-[225px] w-full overflow-hidden bg-white/5">
-                    <Image
-                      src={movie.poster}
-                      alt={`${movie.title} poster`}
-                      fill
-                      className="object-cover transition-transform duration-700 group-hover:scale-105"
-                      sizes="150px"
-                    />
-
-                    {/* POSTER OVERLAY */}
-                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
-                  </div>
-
-                  {/* NUMBER */}
-                  <div className="flex items-center px-6 py-6 md:px-4 md:py-8">
-                    <span className="text-sm font-medium text-green-400/70">
-                      {String(index + 1).padStart(2, "0")}
-                    </span>
-                  </div>
-
-                  {/* MOVIE INFORMATION */}
-                  <div className="flex flex-col justify-center px-6 py-6 md:px-4 md:py-8">
-                    <h3 className="text-xl font-medium tracking-tight transition-colors duration-300 group-hover:text-green-400 md:text-2xl">
-                      {movie.title}
-                    </h3>
-
-                    <p className="mt-2 text-sm text-white/40">
-                      {movie.genre}
-                    </p>
-
-                    <p className="mt-4 max-w-2xl text-sm leading-7 text-white/55">
-                      {movie.description}
-                    </p>
-                  </div>
-
-                  {/* YEAR */}
-                  <div className="flex items-center px-6 pb-6 md:px-8 md:py-8 md:pb-8">
-                    <span className="text-sm text-white/35">
-                      {movie.year}
-                    </span>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <Footer />
-    </main>
-  );
-}
+export const series = [
+  {
+    title: "Anohana",
+    year: "2011",
+    genre: "Anime · Drama",
+    description:
+      "A deeply emotional story about friendship, loss, memories, and letting go.",
+    poster: "/cineliebe/posters/anohana.jpg",
+  },
+  {
+    title: "Demon Slayer",
+    year: "2019",
+    genre: "Anime · Action",
+    description:
+      "A journey of determination, family, demons, and extraordinary battles.",
+    poster: "/cineliebe/posters/demon-slayer.jpg",
+  },
+  {
+    title: "One Piece",
+    year: "1999",
+    genre: "Anime · Adventure",
+    description:
+      "An endless adventure across the seas in search of freedom and the legendary One Piece.",
+    poster: "/cineliebe/posters/one-piece.jpg",
+  },
+  {
+    title: "Tsuki ga Kirei",
+    year: "2017",
+    genre: "Anime · Romance",
+    description:
+      "A quiet and beautiful story about first love, growing up, and finding your way.",
+    poster: "/cineliebe/posters/tsuki-ga-kirei.jpg",
+  },
+  {
+    title: "Game of Thrones",
+    year: "2011",
+    genre: "Fantasy · Drama",
+    description:
+      "An epic tale of power, loyalty, betrayal, and the fight for the Iron Throne.",
+    poster: "/cineliebe/posters/game-of-thrones.jpg",
+  },
+  {
+    title: "All of Us Are Dead",
+    year: "2022",
+    genre: "K-Drama · Horror",
+    description:
+      "Students fight to survive when their school becomes the center of a zombie outbreak.",
+    poster: "/cineliebe/posters/all-of-us-are-dead.jpg",
+  },
+  {
+    title: "Mischievous Kiss",
+    year: "2010",
+    genre: "Drama · Romance",
+    description:
+      "A charming romantic story about an unexpected relationship between two very different people.",
+    poster: "/cineliebe/posters/mischievous-kiss.jpg",
+  },
+  {
+    title: "Clannad",
+    year: "2007",
+    genre: "Anime · Drama",
+    description:
+      "A moving story about family, friendship, love, and the unexpected paths of life.",
+    poster: "/cineliebe/posters/clannad.jpg",
+  },
+  {
+    title: "Doraemon",
+    year: "1979",
+    genre: "Anime · Comedy · Family",
+    description:
+      "A beloved story of friendship, imagination, and adventures with a robotic cat from the future.",
+    poster: "/cineliebe/posters/doraemon.jpg",
+  },
+  {
+    title: "Shinchan",
+    year: "1992",
+    genre: "Anime · Comedy · Family",
+    description:
+      "The hilarious everyday adventures of a mischievous young boy and his family and friends.",
+    poster: "/cineliebe/posters/shinchan.jpg",
+  },
+];

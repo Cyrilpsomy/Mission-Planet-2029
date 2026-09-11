@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import { movies, series } from "@/data/cineliebe";
 
 const featured = [
   {
@@ -339,7 +340,7 @@ export default function CineliebePage() {
               </span>
 
               {/* Glow */}
-              <div className="absolute -top-32 -left-32 h-80 w-80 rounded-full bg-[#F5C542]/[0.04] blur-[100px] transition-all duration-700 group-hover:bg-[#F5C542]/[0.1]" />
+              <div className="absolute -left-32 -top-32 h-80 w-80 rounded-full bg-[#F5C542]/[0.04] blur-[100px] transition-all duration-700 group-hover:bg-[#F5C542]/[0.1]" />
 
               {/* Content */}
               <div className="relative flex min-h-[410px] flex-col justify-between">
@@ -465,9 +466,10 @@ export default function CineliebePage() {
 
       <section className="border-y border-white/10 px-6 py-20">
         <div className="mx-auto grid max-w-5xl grid-cols-3 divide-x divide-white/10 text-center">
+          {/* Movies count */}
           <div>
             <p className="text-4xl font-bold md:text-6xl">
-              17
+              {movies.length}
             </p>
 
             <p className="mt-3 text-[9px] uppercase tracking-[0.35em] text-white/30 md:text-xs">
@@ -475,9 +477,10 @@ export default function CineliebePage() {
             </p>
           </div>
 
+          {/* Shows count */}
           <div>
             <p className="text-4xl font-bold md:text-6xl">
-              10
+              {series.length}
             </p>
 
             <p className="mt-3 text-[9px] uppercase tracking-[0.35em] text-white/30 md:text-xs">
@@ -485,6 +488,7 @@ export default function CineliebePage() {
             </p>
           </div>
 
+          {/* Memories */}
           <div>
             <p className="text-4xl font-bold text-[#F5C542] md:text-6xl">
               ∞

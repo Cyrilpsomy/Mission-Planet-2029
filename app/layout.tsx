@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   ],
   authors: [
     {
-      name: "Cyril P. Somy",
+      name: "Cyril P Somy",
     },
   ],
 };
