@@ -85,7 +85,7 @@ export default function CineliebePage() {
           }}
         />
 
-        {/* Dark overlays */}
+        {/* Dark overlay */}
         <div className="absolute inset-0 bg-black/65" />
 
         <div className="absolute inset-0 bg-gradient-to-r from-black via-black/50 to-black/30" />
@@ -147,7 +147,10 @@ export default function CineliebePage() {
                 className="inline-flex items-center gap-4 rounded-full bg-[#F5C542] px-7 py-4 text-xs font-bold uppercase tracking-[0.25em] text-black transition-all duration-300"
               >
                 Enter the Archive
-                <span className="text-lg">↓</span>
+
+                <span className="text-lg">
+                  ↓
+                </span>
               </motion.a>
 
               <motion.a
@@ -161,7 +164,10 @@ export default function CineliebePage() {
                 className="inline-flex items-center gap-4 rounded-full border border-white/20 bg-black/30 px-7 py-4 text-xs font-semibold uppercase tracking-[0.25em] text-white/70 backdrop-blur-md transition-all duration-300 hover:border-[#F5C542]/50 hover:text-[#F5C542]"
               >
                 Browse Films
-                <span>→</span>
+
+                <span>
+                  →
+                </span>
               </motion.a>
             </div>
           </motion.div>
@@ -206,6 +212,7 @@ export default function CineliebePage() {
         id="archive"
         className="relative border-t border-white/10 px-6 py-28 md:py-36"
       >
+        {/* Background glow */}
         <div className="absolute left-1/2 top-1/2 h-96 w-96 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#F5C542]/[0.035] blur-[140px]" />
 
         <div className="relative mx-auto max-w-7xl">
@@ -213,8 +220,12 @@ export default function CineliebePage() {
             initial="hidden"
             whileInView="visible"
             variants={fadeUp}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
+            transition={{
+              duration: 0.8,
+            }}
+            viewport={{
+              once: true,
+            }}
           >
             <p className="text-xs uppercase tracking-[0.45em] text-[#F5C542]">
               The Archive
@@ -224,6 +235,7 @@ export default function CineliebePage() {
               <h2 className="text-5xl font-bold leading-[0.95] tracking-tight md:text-7xl">
                 Cinema is not
                 <br />
+
                 <span className="text-white/25">
                   just entertainment.
                 </span>
@@ -240,13 +252,17 @@ export default function CineliebePage() {
       </section>
 
       {/* =====================================================
-          MOVIES / SHOWS
+          MOVIES / SHOWS / I'M ONLY HUMAN
       ===================================================== */}
 
       <section className="px-6 pb-32">
         <div className="mx-auto max-w-7xl">
-          <div className="grid gap-px overflow-hidden rounded-3xl border border-white/10 bg-white/10 md:grid-cols-2">
-            {/* MOVIES */}
+          <div className="grid gap-px overflow-hidden rounded-3xl border border-white/10 bg-white/10 md:grid-cols-3">
+
+            {/* =================================================
+                MOVIES
+            ================================================= */}
+
             <motion.a
               href="/cineliebe/movies"
               initial={{
@@ -264,19 +280,23 @@ export default function CineliebePage() {
                 once: true,
               }}
               whileHover={{
-                backgroundColor: "rgba(245,197,66,0.035)",
+                backgroundColor:
+                  "rgba(245,197,66,0.035)",
               }}
               className="group relative min-h-[480px] overflow-hidden bg-black p-8 transition-all duration-700 md:p-12"
             >
               {/* Number */}
+
               <span className="absolute right-8 top-6 text-[9rem] font-bold leading-none text-white/[0.025] transition-all duration-700 group-hover:text-[#F5C542]/[0.06] md:right-12 md:text-[12rem]">
                 01
               </span>
 
               {/* Glow */}
+
               <div className="absolute -bottom-32 -right-32 h-80 w-80 rounded-full bg-[#F5C542]/[0.04] blur-[100px] transition-all duration-700 group-hover:bg-[#F5C542]/[0.1]" />
 
               {/* Content */}
+
               <div className="relative flex min-h-[410px] flex-col justify-between">
                 <div>
                   <div className="flex items-center gap-3">
@@ -301,9 +321,15 @@ export default function CineliebePage() {
                 </div>
 
                 <div className="flex items-center justify-between border-t border-white/10 pt-6">
-                  <span className="text-[10px] uppercase tracking-[0.35em] text-white/30">
-                    Enter Collection
-                  </span>
+                  <div>
+                    <span className="text-[10px] uppercase tracking-[0.35em] text-white/30">
+                      Enter Collection
+                    </span>
+
+                    <p className="mt-2 text-xs text-[#F5C542]/70">
+                      {movies.length} Films
+                    </p>
+                  </div>
 
                   <span className="text-2xl text-[#F5C542] transition-transform duration-500 group-hover:translate-x-3">
                     →
@@ -312,12 +338,15 @@ export default function CineliebePage() {
               </div>
             </motion.a>
 
-            {/* SHOWS */}
+            {/* =================================================
+                SHOWS
+            ================================================= */}
+
             <motion.a
               href="/cineliebe/shows"
               initial={{
                 opacity: 0,
-                x: 40,
+                x: 0,
               }}
               whileInView={{
                 opacity: 1,
@@ -325,24 +354,29 @@ export default function CineliebePage() {
               }}
               transition={{
                 duration: 0.8,
+                delay: 0.1,
               }}
               viewport={{
                 once: true,
               }}
               whileHover={{
-                backgroundColor: "rgba(245,197,66,0.035)",
+                backgroundColor:
+                  "rgba(245,197,66,0.035)",
               }}
               className="group relative min-h-[480px] overflow-hidden bg-black p-8 transition-all duration-700 md:p-12"
             >
               {/* Number */}
+
               <span className="absolute right-8 top-6 text-[9rem] font-bold leading-none text-white/[0.025] transition-all duration-700 group-hover:text-[#F5C542]/[0.06] md:right-12 md:text-[12rem]">
                 02
               </span>
 
               {/* Glow */}
+
               <div className="absolute -left-32 -top-32 h-80 w-80 rounded-full bg-[#F5C542]/[0.04] blur-[100px] transition-all duration-700 group-hover:bg-[#F5C542]/[0.1]" />
 
               {/* Content */}
+
               <div className="relative flex min-h-[410px] flex-col justify-between">
                 <div>
                   <div className="flex items-center gap-3">
@@ -366,9 +400,15 @@ export default function CineliebePage() {
                 </div>
 
                 <div className="flex items-center justify-between border-t border-white/10 pt-6">
-                  <span className="text-[10px] uppercase tracking-[0.35em] text-white/30">
-                    Enter Collection
-                  </span>
+                  <div>
+                    <span className="text-[10px] uppercase tracking-[0.35em] text-white/30">
+                      Enter Collection
+                    </span>
+
+                    <p className="mt-2 text-xs text-[#F5C542]/70">
+                      {series.length} Shows
+                    </p>
+                  </div>
 
                   <span className="text-2xl text-[#F5C542] transition-transform duration-500 group-hover:translate-x-3">
                     →
@@ -376,6 +416,94 @@ export default function CineliebePage() {
                 </div>
               </div>
             </motion.a>
+
+            {/* =================================================
+                I'M ONLY HUMAN
+            ================================================= */}
+
+            <motion.a
+              href="/cineliebe/im-only-human"
+              initial={{
+                opacity: 0,
+                x: 40,
+              }}
+              whileInView={{
+                opacity: 1,
+                x: 0,
+              }}
+              transition={{
+                duration: 0.8,
+                delay: 0.2,
+              }}
+              viewport={{
+                once: true,
+              }}
+              whileHover={{
+                backgroundColor:
+                  "rgba(245,197,66,0.045)",
+              }}
+              className="group relative min-h-[480px] overflow-hidden bg-[#f9f8f4] p-8 text-[#252525] transition-all duration-700 md:p-12"
+            >
+              {/* Number */}
+
+              <span className="absolute right-8 top-6 font-serif text-[9rem] font-light leading-none text-[#b38a2e]/[0.08] transition-all duration-700 group-hover:text-[#b38a2e]/[0.14] md:right-12 md:text-[12rem]">
+                03
+              </span>
+
+              {/* Soft gold glow */}
+
+              <div className="absolute -bottom-32 -right-32 h-80 w-80 rounded-full bg-[#c9a44c]/[0.08] blur-[100px] transition-all duration-700 group-hover:bg-[#c9a44c]/[0.16]" />
+
+              {/* Content */}
+
+              <div className="relative flex min-h-[410px] flex-col justify-between">
+                <div>
+                  <div className="flex items-center gap-3">
+                    <span className="h-2 w-2 rounded-full bg-[#b38a2e]" />
+
+                    <p className="text-[10px] uppercase tracking-[0.4em] text-[#8f702c]">
+                      Something Different
+                    </p>
+                  </div>
+
+                  <h3 className="mt-8 font-serif text-4xl font-light leading-tight md:text-5xl">
+                    I&apos;m Only
+                    <br />
+                    <span className="italic text-[#b38a2e]">
+                      Human.
+                    </span>
+                  </h3>
+
+                  <div className="mt-7 h-px w-16 bg-[#c9a44c] transition-all duration-500 group-hover:w-28" />
+
+                  <p className="mt-7 max-w-md text-sm leading-8 text-[#777]">
+                    Cineliebe is not just about recommending movies and
+                    shows. It is about discovering different possibilities
+                    of life through the stories we watch — different ways
+                    of thinking, loving, choosing, and living — helping us
+                    reflect on our own journey and make choices that could
+                    make our lives a little better.
+                  </p>
+                </div>
+
+                <div className="flex items-center justify-between border-t border-[#b38a2e]/15 pt-6">
+                  <div>
+                    <span className="text-[10px] uppercase tracking-[0.35em] text-[#999]">
+                      Enter Collection
+                    </span>
+
+                    <p className="mt-2 text-xs text-[#b38a2e]">
+                      Stories of kindness & humanity
+                    </p>
+                  </div>
+
+                  <span className="text-2xl text-[#b38a2e] transition-transform duration-500 group-hover:translate-x-3">
+                    →
+                  </span>
+                </div>
+              </div>
+            </motion.a>
+
           </div>
         </div>
       </section>
@@ -386,6 +514,9 @@ export default function CineliebePage() {
 
       <section className="border-t border-white/10 px-6 py-28 md:py-36">
         <div className="mx-auto max-w-7xl">
+
+          {/* Header */}
+
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -414,6 +545,8 @@ export default function CineliebePage() {
             </p>
           </motion.div>
 
+          {/* Featured list */}
+
           <div className="mt-14 border-t border-white/10">
             {featured.map((item, index) => (
               <motion.div
@@ -436,21 +569,25 @@ export default function CineliebePage() {
                 className="group grid grid-cols-[45px_1fr_auto] items-center gap-5 border-b border-white/10 py-6 transition-all duration-500 hover:px-4 md:grid-cols-[70px_1fr_100px_80px] md:gap-8"
               >
                 {/* Number */}
+
                 <span className="text-xs tracking-[0.25em] text-[#F5C542]">
                   {item.number}
                 </span>
 
                 {/* Title */}
+
                 <h3 className="text-xl font-medium tracking-tight transition-colors duration-300 group-hover:text-[#F5C542] md:text-2xl">
                   {item.title}
                 </h3>
 
                 {/* Type */}
+
                 <span className="hidden text-right text-[10px] uppercase tracking-[0.3em] text-white/25 md:block">
                   {item.type}
                 </span>
 
                 {/* Year */}
+
                 <span className="text-right text-xs text-white/35">
                   {item.year}
                 </span>
@@ -466,7 +603,9 @@ export default function CineliebePage() {
 
       <section className="border-y border-white/10 px-6 py-20">
         <div className="mx-auto grid max-w-5xl grid-cols-3 divide-x divide-white/10 text-center">
-          {/* Movies count */}
+
+          {/* Movies */}
+
           <div>
             <p className="text-4xl font-bold md:text-6xl">
               {movies.length}
@@ -477,7 +616,8 @@ export default function CineliebePage() {
             </p>
           </div>
 
-          {/* Shows count */}
+          {/* Shows */}
+
           <div>
             <p className="text-4xl font-bold md:text-6xl">
               {series.length}
@@ -489,6 +629,7 @@ export default function CineliebePage() {
           </div>
 
           {/* Memories */}
+
           <div>
             <p className="text-4xl font-bold text-[#F5C542] md:text-6xl">
               ∞
@@ -506,7 +647,9 @@ export default function CineliebePage() {
       ===================================================== */}
 
       <section className="relative overflow-hidden px-6 py-36 text-center">
+
         {/* Glow */}
+
         <div className="absolute left-1/2 top-1/2 h-[450px] w-[450px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#F5C542]/[0.06] blur-[150px]" />
 
         <motion.div
@@ -533,6 +676,7 @@ export default function CineliebePage() {
           <h2 className="mt-8 text-5xl font-bold leading-tight tracking-tight md:text-7xl">
             Every story leaves
             <br />
+
             <span className="text-white/30">
               something behind.
             </span>
@@ -557,7 +701,10 @@ export default function CineliebePage() {
             className="mt-10 inline-flex items-center gap-4 rounded-full border border-[#F5C542]/60 px-8 py-4 text-xs font-semibold uppercase tracking-[0.3em] text-[#F5C542] transition-all duration-300 hover:bg-[#F5C542] hover:text-black"
           >
             Start Exploring
-            <span>→</span>
+
+            <span>
+              →
+            </span>
           </motion.a>
         </motion.div>
       </section>
