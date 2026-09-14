@@ -14,21 +14,50 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "PLANET 2029 | A Journey Beyond Borders",
+  title: "CYRILPSOMY | Official Website",
+
   description:
-    "PLANET 2029 is a personal global exploration mission — a journey to discover places, cultures, and experiences across the world.",
+    "Welcome to CYRILPSOMY — the personal website of Cyril P Somy, featuring Cineliebe, PLANET 2029, creative projects, stories, and personal journeys.",
+
   keywords: [
+    "CYRILPSOMY",
+    "Cyril P Somy",
+    "Cyril Somy",
+    "Cineliebe",
     "PLANET 2029",
-    "Travel Mission",
-    "World Exploration",
-    "Global Journey",
-    "Travel Diary",
+    "Personal Website",
+    "Creative Projects",
+    "Cyril P Somy Website",
   ],
+
   authors: [
     {
       name: "Cyril P Somy",
     },
   ],
+
+  creator: "Cyril P Somy",
+  publisher: "Cyril P Somy",
+
+  robots: {
+    index: true,
+    follow: true,
+  },
+
+  openGraph: {
+    title: "CYRILPSOMY | Official Website",
+    description:
+      "The official website of Cyril P Somy — featuring Cineliebe, PLANET 2029, creative projects, stories, and personal journeys.",
+    type: "website",
+    siteName: "CYRILPSOMY",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "CYRILPSOMY | Official Website",
+    description:
+      "The official website of Cyril P Somy — featuring Cineliebe, PLANET 2029, creative projects, stories, and personal journeys.",
+  },
 };
 
 export default function RootLayout({
@@ -37,11 +66,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      <body className="min-h-screen bg-slate-950">
+    <html lang="en">
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
         {children}
       </body>
     </html>
