@@ -259,6 +259,33 @@ export const movies = [
       "A quiet and beautiful portrait of an ordinary life, finding meaning, beauty, and happiness in everyday moments.",
     poster: "/cineliebe/posters/perfect-days.jpg",
   },
+
+  {
+    title: "The Good Lie",
+    year: "2014",
+    genre: "Drama",
+    description:
+      "A moving story of resilience, friendship, family, and finding a new life after unimaginable hardship.",
+    poster: "/cineliebe/posters/the-good-lie.jpg",
+  },
+
+  {
+    title: "Train to Busan",
+    year: "2016",
+    genre: "Korean · Action · Thriller · Horror",
+    description:
+      "A tense journey of survival, sacrifice, and humanity as passengers fight to survive a devastating zombie outbreak.",
+    poster: "/cineliebe/posters/train-to-busan.jpg",
+  },
+
+  {
+    title: "The Blind Side",
+    year: "2009",
+    genre: "Biography · Drama · Sport",
+    description:
+      "An inspiring story of compassion, family, opportunity, and the life-changing power of believing in someone.",
+    poster: "/cineliebe/posters/the-blind-side.jpg",
+  },
 ];
 
 export const series = [

@@ -5,42 +5,26 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { movies, series } from "@/data/cineliebe";
 
-const featured = [
+const recentlyAdded = [
   {
-    number: "01",
-    title: "Your Name",
+    title: "The Blind Side",
     type: "FILM",
-    year: "2016",
+    year: 2009,
   },
   {
-    number: "02",
-    title: "Interstellar",
+    title: "Train to Busan",
     type: "FILM",
-    year: "2014",
+    year: 2016,
   },
   {
-    number: "03",
-    title: "Premam",
+    title: "The Good Lie",
     type: "FILM",
-    year: "2015",
+    year: 2014,
   },
   {
-    number: "04",
-    title: "Anohana",
-    type: "SERIES",
-    year: "2011",
-  },
-  {
-    number: "05",
-    title: "Grave of the Fireflies",
+    title: "Perfect Days",
     type: "FILM",
-    year: "1988",
-  },
-  {
-    number: "06",
-    title: "One Piece",
-    type: "SERIES",
-    year: "1999",
+    year: 2023,
   },
 ];
 
@@ -509,7 +493,7 @@ export default function CineliebePage() {
       </section>
 
       {/* =====================================================
-          FEATURED
+          RECENTLY ADDED
       ===================================================== */}
 
       <section className="border-t border-white/10 px-6 py-28 md:py-36">
@@ -531,24 +515,23 @@ export default function CineliebePage() {
           >
             <div>
               <p className="text-xs uppercase tracking-[0.45em] text-[#F5C542]">
-                Selected Memories
+                Recently Added
               </p>
 
               <h2 className="mt-5 text-4xl font-bold tracking-tight md:text-6xl">
-                Featured
+                New Arrivals
               </h2>
             </div>
 
             <p className="max-w-sm text-sm leading-7 text-white/35 md:text-right">
-              A few stories that hold a special place in the
-              collection.
+              The latest stories added to the Cineliebe collection.
             </p>
           </motion.div>
 
-          {/* Featured list */}
+          {/* Recently Added List */}
 
           <div className="mt-14 border-t border-white/10">
-            {featured.map((item, index) => (
+            {recentlyAdded.map((item, index) => (
               <motion.div
                 key={item.title}
                 initial={{
@@ -571,7 +554,7 @@ export default function CineliebePage() {
                 {/* Number */}
 
                 <span className="text-xs tracking-[0.25em] text-[#F5C542]">
-                  {item.number}
+                  {String(index + 1).padStart(2, "0")}
                 </span>
 
                 {/* Title */}
@@ -639,6 +622,7 @@ export default function CineliebePage() {
               Memories
             </p>
           </div>
+
         </div>
       </section>
 
